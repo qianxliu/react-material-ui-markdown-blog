@@ -14,13 +14,13 @@ let button = document.querySelector('button');
 let myHeading = document.querySelector('h1');
 
 function setUserName() {
-    let name = prompt('请输入你的大名!');
-    if (!name) {
+    let myName = prompt('请输入你的大名!');
+    if (!myName) {
         setUserName();
     }
     else {
-        localStorage.setItem('name', name);
-        myHeading.innerHTML = "Neteraxe の 无名小站" + "欢迎" + name + "同学！";
+        localStorage.setItem('name', myName);
+        myHeading.innerHTML = "Neteraxe の 无名小站" + "欢迎" + myName;
     }
 }
 
@@ -29,7 +29,7 @@ if (!localStorage.getItem('name')) {
 }
 else {
     let storedName = localStorage.getItem('name');
-    myHeading.innerHTML = "Neteraxe の 无名小站" + "欢迎" + name + "同学！";
+    myHeading.innerHTML = "Neteraxe の 无名小站" + "欢迎" + storedName;
 }
 
 button.onclick = function () {
