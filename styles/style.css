@@ -16,7 +16,7 @@ body {
     /* the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right). You can also use one, three, or four values, as documented in Margin Syntax. */
     margin: 0 auto;
     /* This sets the element's background color. */
-    background-color: whitesmoke;
+    background-color: white;
     /* This sets four values for padding. The goal is to put  some space around the content.  */
     padding: 0 20px 20px 20px;
     /* This sets values for the width, style and color of the border. */
