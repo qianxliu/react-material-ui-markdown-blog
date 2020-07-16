@@ -1,6 +1,3 @@
-const myHeading = document.querySelector('h1');
-myHeading.textContent = 'Neteraxe の 无名小站';
-
 let img = document.querySelector('img');
 
 img.onclick = function () {
@@ -14,19 +11,22 @@ img.onclick = function () {
 }
 
 let button = document.querySelector('button');
+let myHeading = document.querySelector('h1');
 
 function setUserName() {
     let name = prompt('请输入你的大名!');
-    if (!name)
+    if (!name) {
         setUserName();
+    }
     else {
         localStorage.setItem('name', name);
         myHeading.innerHTML = "Neteraxe の 无名小站" + "欢迎" + name + "同学！";
     }
 }
 
-if (!localStorage.getItem('name'))
+if (!localStorage.getItem('name')) {
     setUserName();
+}
 else {
     let storedName = localStorage.getItem('name');
     myHeading.innerHTML = "Neteraxe の 无名小站" + "欢迎" + name + "同学！";
