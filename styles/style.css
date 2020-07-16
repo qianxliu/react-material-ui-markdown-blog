@@ -1,17 +1,15 @@
 html {
     background-color: white;
-    font-size: 10px;
     /* px means "pixels": the base font size is now 10 pixels high  */
     font-family: "Open Sans", sans-serif;
     /* this should be the rest of the output you got from Google fonts */
 }
 
-
 /* ctrl + / 快速注释 */
 
 body {
     /* This forces the body to always be 600 pixels wide. */
-    width: 660px;
+    /* width: 660px; */
     /* When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case);  */
     /* the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right). You can also use one, three, or four values, as documented in Margin Syntax. */
     margin: 0 auto;
@@ -23,19 +21,20 @@ body {
     border: 5px solid black;
 }
 
-h1 {
+h1{
     /*To eliminate the gap, we overwrite the browser's default styling with the setting margin: 0;. */
     margin: 0;
-    padding: 20px 0;
-    color: black;
     /* horizontal offset */
     /* vertical offset */
-    /* blur radius */
+    padding: 20px 0;
     /* base color */
-    text-shadow: 3px 3px 1px grey;
-    font-size: 60px;
+    color: black;
+    font-size: 50px;
     text-align: center;
+    /* blur radius */
+    text-shadow: 3px 3px 1px grey;
 }
+
 
 p,
 li {

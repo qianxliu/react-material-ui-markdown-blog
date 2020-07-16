@@ -1,15 +1,5 @@
 let img = document.querySelector('img');
 
-img.onclick = function () {
-    let src = img.getAttribute('src');
-    if (src == 'images/favicon.png')
-        img.setAttribute('src', 'images/earth.png');
-    else if (src == 'images/earth.png')
-        img.setAttribute('src', 'images/love2.jpg');
-    else
-        img.setAttribute('src', 'images/favicon.png');
-}
-
 let button = document.querySelector('button');
 let myHeading = document.querySelector('h1');
 
