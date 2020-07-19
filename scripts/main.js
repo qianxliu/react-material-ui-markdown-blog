@@ -1,7 +1,9 @@
 var randomColor = require('randomcolor'); // import the script
-var color = randomColor(); // a hex code for an attractive color
+var backgoundcolor = randomColor(); // a hex code for an attractive color
 
-let img = document.querySelector('img');
+let myHtml = document.querySelector("html");
+myHtml.setAttribute("background-color", backgoundcolor);
+
 
 let button = document.querySelector('button');
 let myHeading = document.querySelector('h1');
