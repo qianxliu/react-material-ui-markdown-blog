@@ -1,7 +1,6 @@
 var backgoundcolor = randomColor(); // a hex code for an attractive color
 
-let myHtml = document.querySelector("html");
-myHtml.setAttribute("background-color", backgoundcolor);
+document.body.style.backgroundColor = backgoundcolor;
 
 
 let button = document.querySelector('button');
