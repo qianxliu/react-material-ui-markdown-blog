@@ -1,4 +1,3 @@
-var randomColor = require('randomcolor'); // import the script
 var backgoundcolor = randomColor(); // a hex code for an attractive color
 
 let myHtml = document.querySelector("html");
