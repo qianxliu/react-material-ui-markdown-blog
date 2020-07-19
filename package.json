@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "browserify": "^16.5.1",
     "randomcolor": "^0.6.2"
   },
   "devDependencies": {},
