@@ -1,54 +1,92 @@
-html {
-    /* px means "pixels": the base font size is now 10 pixels high  */
-    font-family: "Open Sans", sans-serif;
-    /* this should be the rest of the output you got from Google fonts */
-    border: none;
-}
 
 /* ctrl + / 快速注释 */
+head {
+    height: 150px;
+}
+
+/* header and body setup */
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
 
 body {
-    /* This forces the body to always be 600 pixels wide. */
-    /* width: 660px; */
-    /* When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case);  */
-    /* the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right). You can also use one, three, or four values, as documented in Margin Syntax. */
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    /* This sets four values for padding. The goal is to put  some space around the content.  */
-    padding: 0 20px 20px 20px;
-    /* This sets values for the width, style and color of the border. */
-    border: 5px solid black;
+    position: relative;
 }
 
+/* Header styling */
 
-
-h1{
-    /*To eliminate the gap, we overwrite the browser's default styling with the setting margin: 0;. */
-    margin: 0;
-    /* horizontal offset */
-    /* vertical offset */
-    padding: 20px 0;
-    /* base color */
-    color: black;
-    font-size: 50px;
-    /* text-align: center; */
-    /* blur radius */
-    text-shadow: 3px 3px 1px grey;
+header {
+    height: 100px;
 }
 
-
-p,
-li {
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 1px;
+header img {
+    width: 100px;
+    position: absolute;
+    right: 32.5px;
+    top: 32.5px;
 }
 
 h1 {
-    background-image: url("https://git.nwu.edu.cn/2018104171/web/raw/master/images/favicon.png");
+    font-size: 50px;
+    line-height: 140px;
+    margin: 0 0 0 32.5px;
 }
 
-img {
-    /* The <body> is a block element, meaning it takes up space on the page. A block element can have margin and other spacing values applied to it. In contrast, images are inline elements. It is not possible to apply margin or spacing values to inline elements. */
+/* main section and video styling */
+
+main {
+    background: lightskyblue;
+}
+
+article {
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    line-height: 2;
+}
+
+iframe {
+    float: left;
+    margin: 0 20px 20px 0;
+    max-width: 100%;
+}
+
+/* further info links */
+
+.further-info {
+    clear: left;
+    padding: 40px 0;
+    background: #c13832;
+    box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.5),
+        inset 0 -3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.further-info a {
+    width: 25%;
     display: block;
-    margin: 0 auto;
+    float: left;
+}
+
+.further-info img {
+    max-width: 100%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Red panda image */
+
+.red-panda img {
+    display: block;
+    max-width: 100%;
 }
