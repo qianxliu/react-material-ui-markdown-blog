@@ -2,6 +2,7 @@ html {
     /* px means "pixels": the base font size is now 10 pixels high  */
     font-family: "Open Sans", sans-serif;
     /* this should be the rest of the output you got from Google fonts */
+    border: none;
 }
 
 /* ctrl + / 快速注释 */
@@ -12,13 +13,13 @@ body {
     /* When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case);  */
     /* the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right). You can also use one, three, or four values, as documented in Margin Syntax. */
     margin: 0 auto;
-    /* This sets the element's background color. */
-    background-color: white;
     /* This sets four values for padding. The goal is to put  some space around the content.  */
     padding: 0 20px 20px 20px;
     /* This sets values for the width, style and color of the border. */
     border: 5px solid black;
 }
+
+
 
 h1{
     /*To eliminate the gap, we overwrite the browser's default styling with the setting margin: 0;. */
@@ -37,10 +38,13 @@ h1{
 
 p,
 li {
-    color: black;
     font-size: 16px;
     line-height: 2;
     letter-spacing: 1px;
+}
+
+h1 {
+    background-image: url("https://git.nwu.edu.cn/2018104171/web/raw/master/images/favicon.png");
 }
 
 img {

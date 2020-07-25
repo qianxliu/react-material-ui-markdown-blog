@@ -1,7 +1,10 @@
-var backgoundcolor = randomColor(); // a hex code for an attractive color
+var backgoundcolor = randomColor({
+    luminosity: 'light',
+    format: 'rgba',
+    alpha: 0.6, // e.g. 'rgba(9, 1, 107, 0.5)',
+}); // a hex code for an attractive color
 
 document.body.style.backgroundColor = backgoundcolor;
-
 
 let button = document.querySelector('button');
 let myHeading = document.querySelector('h1');

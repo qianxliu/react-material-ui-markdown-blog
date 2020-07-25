@@ -20,17 +20,27 @@
     <header>
         <!-- Semantics the keyword, span is a <span> element. It has no semantics. You use it to wrap content when you want to apply CSS to it (or do something to it with JavaScript) without giving it any extra meaning (you'll find out more about these later on in the course). -->
         <h1>Neteraxe</h1>
+        <iframe src="https://xbeibeix.com/api/bilibili/biliplayer/?url=BV1wJ411L7rz" width="100%" height="500"
+            allowfullscreen>
+        </iframe>
     </header>
     <nav>
         <ul>
-            <li>
+            <li style="left: auto;">
                 <a href="#">Home</a>
             </li>
-            <li><a href="#">Repositories</a></li>
-            <li>
+            <li style="left: auto;">
+                <a href="#">Repositories</a></li>
+            <li style="left: auto;">
                 <a href="#">Contact</a>
             </li>
         </ul>
+        <picture>
+            <source media="(max-width: 32px)" srcset="https://git.nwu.edu.cn/2018104171/pdf/raw/master/love2.png">
+            <source media="(min-width: 300px)" srcset="https://git.nwu.edu.cn/2018104171/pdf/raw/master/love.jpg">
+            <img src="https://git.nwu.edu.cn/2018104171/pdf/raw/master/love.jpg"
+                alt="The owner of website is a cute man">
+        </picture>
         <!-- A Search form is another commmon non-linear way to navigate through a website. -->
         <form>
             <input type="search" name="q" id="query">
@@ -86,7 +96,5 @@
     <script src="https://cdn.staticfile.org/randomcolor/0.6.1/randomColor.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
-
-
 
 </html>
