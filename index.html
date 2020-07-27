@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.loli.net/css?family=Open+Sans">
     <link rel="stylesheet" href="styles/style.css">
 
+    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
+
     <title>Neteraxe の 无名小站</title>
 </head>
 
@@ -86,6 +88,14 @@
 
     <footer>
         <button>改变名字?</button>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'NsaHiTkiDczh6Xe3c0eqPetn-gzGzoHsz',
+                appKey: 'cDgeDf6vFrBhItxNY0m9aMaR'
+            })
+        </script>
         <p>©Copyright 2020 by Neteraxe. All rights reversed.</p>
     </footer>
 
