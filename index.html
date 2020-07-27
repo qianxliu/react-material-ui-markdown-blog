@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
-
     <title>Neteraxe の 无名小站</title>
 </head>
 
@@ -21,8 +20,7 @@
     <header>
         <!-- Semantics the keyword, span is a <span> element. It has no semantics. You use it to wrap content when you want to apply CSS to it (or do something to it with JavaScript) without giving it any extra meaning (you'll find out more about these later on in the course). -->
         <h1>Neteraxe</h1>
-        <img src="https://git.nwu.edu.cn/2018104171/pdf/raw/master/love.jpg" alt="The owner of website is a cute man"
-            >
+        <img src="https://git.nwu.edu.cn/2018104171/pdf/raw/master/love.jpg" alt="The owner of website is a cute man">
     </header>
 
     <nav>
@@ -47,6 +45,10 @@
     <main>
         <!-- <article> encloses a block of related content that makes sense on its own without the rest of the page (e.g., a single blog post). -->
         <article>
+            <span id="mainpage" class="leancloud_visitors" data-flag-title="主页">
+                <em class="post-meta-item-text">当前页访问次数</em>
+                <i class="leancloud-visitors-count">10</i>
+            </span>
             <iframe src="https://xbeibeix.com/api/bilibili/biliplayer/?url=BV1wJ411L7rz" width="1200" height="600"
                 allowfullscreen>
             </iframe>
@@ -81,25 +83,28 @@
             <h2>Related</h2>
             <ul>
                 <li><a href="#">鸣谢开源</a></li>
+                <li> <button>改变名字?</button></li>
             </ul>
         </aside>
     </main>
 
 
     <footer>
-        <button>改变名字?</button>
         <div id="vcomments"></div>
         <script>
             new Valine({
                 el: '#vcomments',
                 appId: 'NsaHiTkiDczh6Xe3c0eqPetn-gzGzoHsz',
-                appKey: 'cDgeDf6vFrBhItxNY0m9aMaR'
+                appKey: 'cDgeDf6vFrBhItxNY0m9aMaR',
+                visitor: true,
+                avatar: 'retro',
+                recordIP: true,
+                enableQQ: true,
             })
         </script>
         <p>©Copyright 2020 by Neteraxe. All rights reversed.</p>
     </footer>
 
-    <script src="https://cdn.staticfile.org/randomcolor/0.6.1/randomColor.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 
