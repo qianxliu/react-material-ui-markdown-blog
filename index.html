@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://fonts.loli.net/css?family=Open+Sans">
     <link rel="stylesheet" href="styles/style.css">
 
+    <script src="https://git.nwu.edu.cn/2018104171/pdf/raw/master/av-min.js"></script>
     <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
+
     <title>Neteraxe 的无名小站</title>
 </head>
 
@@ -89,9 +91,12 @@
     </main>
 
 
+
     <footer>
         <script>
-            new Valine({
+            var valine = new Valine();
+            valine.init({
+                serverURLs: 'https://avoscloud.com',
                 el: '#vcomments',
                 appId: '6NPCsYTus5srhbwTdVMwoUJe-MdYXbMMI',
                 appKey: 'RuAOm6yrJ8KMkFc4ru8dkWtS',
