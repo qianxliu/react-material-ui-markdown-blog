@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- render way -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Neteraxe">
     <meta name="description" content="Neteraxeの无名小站是Neteraxe建立的一个个人站点!分享生活中可爱的点点滴滴">
     <meta name="twitter:title" content="Neteraxeの无名小站">
@@ -13,7 +15,7 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src="https://git.nwu.edu.cn/2018104171/pdf/raw/master/av-min.js"></script>
-    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
+    <script src="https://unpkg.com/minivaline@2/dist/MiniValine.min.js"></script>
 
     <title>Neteraxe 的无名小站</title>
 </head>
@@ -94,18 +96,14 @@
 
     <footer>
         <!-- important!!! -->
-        <div id="vcomments"></div>
+        <div class="comment"></div>
         <script>
-            var valine = new Valine();
-            valine.init({
-                el: '#vcomments',
-                appId: '6NPCsYTus5srhbwTdVMwoUJe-MdYXbMMI',
-                appKey: 'RuAOm6yrJ8KMkFc4ru8dkWtS',
-                avatar: '',
-                visitor: true,
-                recordIP: true,
-                enableQQ: true,
-            })
+            new MiniValine({
+                el: '.comment',
+                appId: 'Your App ID',
+                appKey: 'Your Key',
+                placeholder: 'Write a Comment O(∩_∩)O~~',
+            });
         </script>
         <p>©Copyright 2020 by Neteraxe. All rights reversed.</p>
     </footer>
