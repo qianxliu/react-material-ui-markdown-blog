@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src="https://unpkg.com/minivaline/dist/MiniValine.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/minivaline-counter@1/dist/MCounter.min.js"></script>
 
     <title>Neteraxe 的无名小站</title>
 </head>
@@ -83,29 +82,27 @@
         </article>
         <!-- the aside content can also be nested within the main content -->
         <aside>
-            <h2>Related</h2>
-            <ul>
-                <li><a href="#">鸣谢开源</a></li>
-                <li> <button>改变名字?</button></li>
-            </ul>
             <!-- important!!! -->
             <div class="comment"></div>
             <script>
                 new MiniValine({
                     el: '.comment',
+                    mode: 'xCss',
                     appId: '6NPCsYTus5srhbwTdVMwoUJe-MdYXbMMI',
                     appKey: 'RuAOm6yrJ8KMkFc4ru8dkWtS',
+                    placeholder: 'Write a Comment',
                     recordIP: true,
-                    placeholder: 'Write a Comment O(∩_∩)O~~',
+                    visitor: true,
+                    tagMeta: ["Master", "Friend", "Visitor"],
+                    region: true,
                     emoticonUrl: ['https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@master', 'https://cdn.jsdelivr.net/gh/MiniValine/alus']
                 });
             </script>
-            <script>
-                new MCounter({
-                    appId: '6NPCsYTus5srhbwTdVMwoUJe-MdYXbMMI',
-                    appKey: 'RuAOm6yrJ8KMkFc4ru8dkWtS',
-                });
-            </script>
+            <h2>Related</h2>
+            <ul>
+                <li><a href="#">鸣谢开源</a></li>
+                <li> <button>改变名字?</button></li>
+            </ul>
         </aside>
     </main>
 
