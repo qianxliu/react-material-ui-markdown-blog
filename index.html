@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <script src="https://git.nwu.edu.cn/2018104171/pdf/raw/master/av-min.js"></script>
-
-    <!-- Unpkg -->
-    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.3/dist/disqusjs.css">
-    <script src="https://unpkg.com/disqusjs@1.3/dist/disqus.js"></script>
+    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
 
     <title>Neteraxe 的无名小站</title>
 </head>
@@ -96,19 +93,19 @@
 
 
     <footer>
-        <div id="disqus_thread"></div>
+        <!-- important!!! -->
+        <div id="vcomments"></div>
         <script>
-            var dsqjs = new DisqusJS({
-                shortname: 'neteraxe',
-                siteName: '',
-                identifier: '',
-                url: '',
-                title: '',
-                api: '',
-                apikey: 'isCg0qJVsqz3WiThTRxQhcBvrZzmJJ8GV8g8aso3uvkkuRti6iftLvx90bQPkWo2',
-                admin: '',
-                adminLabel: ''
-            });
+            var valine = new Valine();
+            valine.init({
+                el: '#vcomments',
+                appId: '6NPCsYTus5srhbwTdVMwoUJe-MdYXbMMI',
+                appKey: 'RuAOm6yrJ8KMkFc4ru8dkWtS',
+                avatar: '',
+                visitor: true,
+                recordIP: true,
+                enableQQ: true,
+            })
         </script>
         <p>©Copyright 2020 by Neteraxe. All rights reversed.</p>
     </footer>
