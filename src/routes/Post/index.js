@@ -79,7 +79,6 @@ export default (props) => {
       ) : (
           <Typography variant='h4' className={classes.notFound}>No post found :(</Typography>
         )}
-      <Comment />
       <Divider className={classes.divider} />
       <div>
         <Typography gutterBottom variant='h5'>
