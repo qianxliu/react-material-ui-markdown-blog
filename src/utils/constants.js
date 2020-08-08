@@ -1,1 +1,1 @@
-export const SITE_TITLE = 'Unamed site by xin';
+export const SITE_TITLE = 'Qian Xin';

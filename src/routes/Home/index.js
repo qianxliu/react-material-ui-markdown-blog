@@ -9,7 +9,6 @@ export default () => {
   const classes = styles();
   const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-
   return (
     <Grid container className={classes.grid} spacing={2}>
       {sortedPosts.map((post, index) => (

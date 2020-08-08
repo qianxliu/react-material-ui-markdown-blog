@@ -24,6 +24,6 @@ describe('<Home />', () => {
   });
 
   it('renders without crashing', () => {
-    expect(wrapper.contains(' conamine')).toBe(true);
+    expect(wrapper.contains('Cornua Prospicientis conamine')).toBe(true);
   });
 });

@@ -38,5 +38,5 @@ export default makeStyles((theme) => ({
   },
   notFound: {
     marginBottom: theme.spacing(3),
-  },
+  }
 }));

@@ -5,11 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import PostCard from '../../components/PostCard';
 import posts from '../../posts';
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactMarkdown from 'markdown-to-jsx';
 import styles from './styles';
 import Typography from '@material-ui/core/Typography';
-import Comment from '../../components/Comment';
 
 export default (props) => {
   const { match: { params } } = props;
@@ -43,7 +42,27 @@ export default (props) => {
     },
   };
 
+
   const post = posts.find((p) => p.id === postId);
+
+  const readTextFile = (file) => {
+    var rawFile = new XMLHttpRequest();
+    let allText;
+    //false for string
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = () => {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status === 0) {
+          allText = rawFile.responseText;
+        }
+      }
+    };
+    rawFile.send(null);
+    return allText;
+  };
+
+  let filepath = "/articles/".concat(postId).concat(".md");
+  post.markdown = readTextFile(filepath);
 
   return (
     <React.Fragment>

@@ -22,7 +22,7 @@ export default () => {
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route path='/post/:id' component={Post} />
-                  <Redirect to='/' />
+                  <Redirect to='/'/>
                 </Switch>
               </main>
             </CSSTransition>

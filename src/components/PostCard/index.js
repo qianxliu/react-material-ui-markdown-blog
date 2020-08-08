@@ -11,8 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 
 export default (props) => {
-  const { post } = props => {
-  };
+  const { post } = props;
   const classes = styles();
 
   if (!post) {
@@ -20,18 +19,17 @@ export default (props) => {
   }
 
   const scrollTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
   };
 
   const date = new Date(post.date).toDateString();
 
   return (
-    < CardActionArea
+    <CardActionArea
       className='post-link'
       component={Link}
       onClick={scrollTop}
-      to={`/post/${post.id}`
-      }
+      to={`/post/${post.id}`}
     >
       <Card className={classes.card}>
         <div className={classes.cardDetails}>
@@ -71,6 +69,6 @@ export default (props) => {
           />
         </Hidden>
       </Card>
-    </CardActionArea >
+    </CardActionArea>
   )
 }
