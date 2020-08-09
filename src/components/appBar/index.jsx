@@ -1,4 +1,4 @@
-import * as constants from '../../utils/constants';
+import * as constants from '../../utils/constants.jsx';
 import AppBar from '@material-ui/core/AppBar/AppBar';
 import Collapse from '@material-ui/core/Collapse';
 import Divider from '@material-ui/core/Divider';

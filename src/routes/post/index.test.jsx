@@ -1,16 +1,22 @@
-import Home from './index'
-import React from 'react'
-import Grid from '@material-ui/core/Grid';
-import { shallow } from 'enzyme';
+import Post from './index'
+import React from '/react'
+import { shallow } from '/enzyme';
 
 describe('<Home />', () => {
   let wrapper;
   const setState = jest.fn();
   const useStateSpy = jest.spyOn(React, 'useState');
   useStateSpy.mockImplementation((init) => [init, setState]);
+  const props = {
+    match: {
+      params: {
+        id: "1"
+      }
+    }
+  };
 
   beforeEach(() => {
-    wrapper = shallow(<Home />);
+    wrapper = shallow(<Post {...props} />);
   });
 
   afterEach(() => {
@@ -18,6 +24,6 @@ describe('<Home />', () => {
   });
 
   it('renders without crashing', () => {
-    expect(wrapper.dive().dive().find('.MuiGrid-root').exists()).toBe(true)
+    expect(wrapper.contains('Cornua Prospicientis conamine')).toBe(true);
   });
 });

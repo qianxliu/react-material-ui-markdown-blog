@@ -1,9 +1,17 @@
 [{
-  "id": "0story",
-  "date": "2020-08-08T10:20:36Z",
-  "title": "本站的开发与建设",
-  "thumbnail": "/images/photo-1.jpeg",
-  "author": "Qian Xin",
-  "preview": "Quater quod, mea, habet garrula et aquis nostras iras additur nigri nullo...",
-  "tags": ["Story", "Development"]
-}]
+    "id": "0story",
+    "date": "2020-08-08T10:20:36Z",
+    "thumbnail": "/images/0story.jpeg",
+    "author": "Qian Xin",
+    "preview": "Basic knowledge about the common site",
+    "tags": ["Main", "Website"]
+  },
+  {
+    "id": "1NLP",
+    "date": "2020-08-09T10:20:36Z",
+    "thumbnail": "/images/1NLP.jpeg",
+    "author": "Qian Xin",
+    "preview": "Basic knowledge about the NLP, and some note not important",
+    "tags": ["Main", "NLP", "Machine Learning"]
+  }
+]

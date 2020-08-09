@@ -1,7 +1,7 @@
-import * as constants from '../../utils/constants';
+import * as constants from '../../utils/constants.jsx';
 import AppBar from './index'
-import React from 'react'
-import { shallow } from 'enzyme';
+import React from '/react'
+import { shallow } from '/enzyme';
 
 describe('<AppBar />', () => {
   let wrapper;

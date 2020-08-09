@@ -24,6 +24,32 @@ export default (props) => {
 
   const date = new Date(post.date).toDateString();
 
+
+  if (!post.title) {
+    const readTextFile = (file) => {
+      let rawFile = new XMLHttpRequest();
+      let allText;
+      //false for string
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = () => {
+        if (rawFile.readyState === 4) {
+          if (rawFile.status === 200 || rawFile.status === 0) {
+            allText = rawFile.responseText;
+          }
+        }
+      };
+      rawFile.send(null);
+      return allText;
+    };
+
+    const filepath = "/articles/".concat(post.id).concat(".md");
+    let content = readTextFile(filepath);
+
+    const pattern = /\s.+/;
+    const title = content.match(pattern);
+    post.title = title;
+  }
+
   return (
     <CardActionArea
       className='post-link'
@@ -48,7 +74,7 @@ export default (props) => {
                 {post.tags.map((tag) => (
                   <Chip
                     className={classes.chip}
-                    key={tag}
+                    // key={tag}
                     label={tag}
                   />
                 ))}

@@ -1,23 +1,22 @@
 {
-  "name": "material-ui-demo-blog",
-  "version": "4.0.0",
+  "name": "blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
-    "markdown-to-jsx": "latest",
+    "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-markdown": "^4.3.1",
     "react-router-dom": "latest",
     "react-scripts": "latest",
+    "react-syntax-highlighter": "^13.3.1",
     "react-transition-group": "latest"
   },
   "browserslist": {
@@ -33,7 +32,11 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^16.9.45",
+    "awesome-typescript-loader": "^5.2.1",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0"
+    "enzyme-adapter-react-16": "^1.14.0",
+    "source-map-loader": "^1.0.1",
+    "typescript": "^3.9.7"
   }
 }

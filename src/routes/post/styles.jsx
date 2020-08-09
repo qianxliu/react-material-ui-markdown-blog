@@ -30,12 +30,6 @@ export default makeStyles((theme) => ({
   hero: {
     width: '100%',
   },
-  listItem: {
-    marginTop: theme.spacing(1),
-  },
-  markdown: {
-    ...theme.typography.body2,
-  },
   notFound: {
     marginBottom: theme.spacing(3),
   }

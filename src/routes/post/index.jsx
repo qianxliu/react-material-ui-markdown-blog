@@ -2,13 +2,13 @@ import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import PostCard from '../../components/PostCard';
-import posts from '../../posts';
+import PostCard from '../../components/postCard';
+import posts from '../../posts.json';
 import React from 'react';
-import ReactMarkdown from 'markdown-to-jsx';
 import styles from './styles';
 import Typography from '@material-ui/core/Typography';
+import ReactMarkdown from "react-markdown";
+import CodeBlock from '../../utils/codeblock';
 
 export default (props) => {
   const { match: { params } } = props;
@@ -24,51 +24,33 @@ export default (props) => {
     return newArray;
   };
 
-  const options = {
-    overrides: {
-      h1: { component: (props) => <Typography gutterBottom variant='h4' {...props} /> },
-      h2: { component: (props) => <Typography gutterBottom variant='h6' {...props} /> },
-      h3: { component: (props) => <Typography gutterBottom variant='subtitle1' {...props} /> },
-      h4: { component: (props) => <Typography gutterBottom variant='caption' paragraph {...props} /> },
-      p: { component: (props) => <Typography paragraph {...props} /> },
-      a: { component: Link },
-      li: {
-        component: (props) => (
-          <li className={classes.listItem}>
-            <Typography component='span' {...props} />
-          </li>
-        )
-      },
-    },
-  };
-
-
   const post = posts.find((p) => p.id === postId);
 
-  const readTextFile = (file) => {
-    var rawFile = new XMLHttpRequest();
-    let allText;
-    //false for string
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = () => {
-      if (rawFile.readyState === 4) {
-        if (rawFile.status === 200 || rawFile.status === 0) {
-          allText = rawFile.responseText;
+  if (!post.markdown) {
+    const readTextFile = (file) => {
+      let rawFile = new XMLHttpRequest();
+      let allText;
+      //false for string
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = () => {
+        if (rawFile.readyState === 4) {
+          if (rawFile.status === 200 || rawFile.status === 0) {
+            allText = rawFile.responseText;
+          }
         }
-      }
+      };
+      rawFile.send(null);
+      return allText;
     };
-    rawFile.send(null);
-    return allText;
-  };
 
-  let filepath = "/articles/".concat(postId).concat(".md");
-  post.markdown = readTextFile(filepath);
+    const filepath = "/articles/".concat(postId).concat(".md");
+    post.markdown = readTextFile(filepath);
+  }
 
   return (
     <React.Fragment>
       {post ? (
         <React.Fragment>
-          <Typography align='center' component='h1' gutterBottom variant='h2'>{post.title}</Typography>
           <div className={classes.authorContainer}>
             <div>
               <Avatar className={classes.avatar}>{post.author[0]}</Avatar>
@@ -79,9 +61,10 @@ export default (props) => {
             </div>
           </div>
           <img src={post.thumbnail} alt="post" className={classes.hero} />
-          <ReactMarkdown className={classes.markdown} options={options} >
-            {post.markdown}
-          </ReactMarkdown>
+          <ReactMarkdown
+            source={post.markdown}
+            renderers={{ code: CodeBlock }}
+          />
           <div>
             {post.tags.map((tag) => (
               <Chip

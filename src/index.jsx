@@ -1,14 +1,14 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from './routes';
-import theme from './theme';
+import theme from './theme.jsx';
 import { ThemeProvider } from '@material-ui/styles';
+import Routes from "./routes/index.jsx"
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme} >
     <CssBaseline />
-    <Routes />
+    < Routes />
   </ThemeProvider>,
   document.querySelector('#root'),
 );
