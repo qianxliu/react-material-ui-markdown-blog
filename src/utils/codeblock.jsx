@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/styles/prism";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from "react-syntax-highlighter/styles/prism";
 
 class CodeBlock extends PureComponent {
     static propTypes = {
@@ -16,8 +16,7 @@ class CodeBlock extends PureComponent {
     render() {
         const { language, value } = this.props;
         return (
-            <SyntaxHighlighter language={language} style={dark}>
-
+            <SyntaxHighlighter language={language} style={tomorrow}>
                 {value}
             </SyntaxHighlighter>
         );
