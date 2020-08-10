@@ -18,6 +18,7 @@ export default () => {
           </Grid>
         </Zoom>
       ))}
+      {console.clear()}
     </Grid>
   )
 }

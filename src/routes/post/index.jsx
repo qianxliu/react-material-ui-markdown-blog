@@ -26,25 +26,19 @@ export default (props) => {
 
   const post = posts.find((p) => p.id === postId);
 
+  //await synchronization 同步 asynchronous 异步
   if (!post.markdown) {
-    const readTextFile = (file) => {
-      let rawFile = new XMLHttpRequest();
-      let allText;
-      //false for string
-      rawFile.open("GET", file, false);
-      rawFile.onreadystatechange = () => {
-        if (rawFile.readyState === 4) {
-          if (rawFile.status === 200 || rawFile.status === 0) {
-            allText = rawFile.responseText;
-          }
+    let rawFile = new XMLHttpRequest();
+    //false for string
+    rawFile.open("GET", "/articles/".concat(post.id).concat(".md"), false);
+    rawFile.onreadystatechange = () => {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status === 0) {
+          post.markdown = rawFile.responseText;
         }
-      };
-      rawFile.send(null);
-      return allText;
+      }
     };
-
-    const filepath = "/articles/".concat(postId).concat(".md");
-    post.markdown = readTextFile(filepath);
+    rawFile.send(null);
   }
 
   return (
@@ -60,7 +54,8 @@ export default (props) => {
               <Typography variant='subtitle2' color='textSecondary' className={classes.date}>{new Date(post.date).toDateString()}</Typography>
             </div>
           </div>
-          <img src={post.thumbnail} alt="post" className={classes.hero} />
+          <script src="#" httponly="true" secure="true" samesite="Secure" />
+          <img src={"//git.nwu.edu.cn/2018104171/web/raw/master/build".concat(post.thumbnail)} alt="post" className={classes.hero} />
           <ReactMarkdown
             source={post.markdown}
             renderers={{ code: CodeBlock }}
@@ -94,6 +89,7 @@ export default (props) => {
           ))}
         </Grid>
       </div>
+      {console.clear()}
     </React.Fragment>
   )
 }

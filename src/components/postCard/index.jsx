@@ -24,30 +24,18 @@ export default (props) => {
 
   const date = new Date(post.date).toDateString();
 
-
   if (!post.title) {
-    const readTextFile = (file) => {
-      let rawFile = new XMLHttpRequest();
-      let allText;
-      //false for string
-      rawFile.open("GET", file, false);
-      rawFile.onreadystatechange = () => {
-        if (rawFile.readyState === 4) {
-          if (rawFile.status === 200 || rawFile.status === 0) {
-            allText = rawFile.responseText;
-          }
+    let rawFile = new XMLHttpRequest();
+    //false for string
+    rawFile.open("GET", "/articles/".concat(post.id).concat(".md"), false);
+    rawFile.onreadystatechange = () => {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status === 0) {
+          post.title = rawFile.responseText.match(/\s.+/);
         }
-      };
-      rawFile.send(null);
-      return allText;
+      }
     };
-
-    const filepath = "/articles/".concat(post.id).concat(".md");
-    let content = readTextFile(filepath);
-
-    const pattern = /\s.+/;
-    const title = content.match(pattern);
-    post.title = title;
+    rawFile.send(null);
   }
 
   return (
@@ -90,7 +78,7 @@ export default (props) => {
         <Hidden xsDown>
           <CardMedia
             className={classes.cardMedia}
-            image={post.thumbnail}
+            image={"//git.nwu.edu.cn/2018104171/web/raw/master/build".concat(post.thumbnail)}
             title='Image title'
           />
         </Hidden>
