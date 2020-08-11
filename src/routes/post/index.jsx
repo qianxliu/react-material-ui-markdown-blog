@@ -29,15 +29,16 @@ export default (props) => {
   //await synchronization 同步 asynchronous 异步
   if (!post.markdown) {
     let rawFile = new XMLHttpRequest();
-    //false for string
-    rawFile.open("GET", "/articles/".concat(post.id).concat(".md"), false);
     rawFile.onreadystatechange = () => {
       if (rawFile.readyState === 4) {
         if (rawFile.status === 200 || rawFile.status === 0) {
           post.markdown = rawFile.responseText;
+          if (!post.title)
+            post.title = post.markdown.match(/\s.+/);
         }
       }
     };
+    rawFile.open("GET", "/articles/".concat(post.id).concat(".md"), true);
     rawFile.send(null);
   }
 

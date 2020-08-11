@@ -26,15 +26,17 @@ export default (props) => {
 
   if (!post.title) {
     let rawFile = new XMLHttpRequest();
-    //false for string
-    rawFile.open("GET", "/articles/".concat(post.id).concat(".md"), false);
     rawFile.onreadystatechange = () => {
       if (rawFile.readyState === 4) {
         if (rawFile.status === 200 || rawFile.status === 0) {
+          if (!post.markdown)
+            post.markdown = rawFile.responseText;
           post.title = rawFile.responseText.match(/\s.+/);
         }
       }
     };
+    //false for string
+    rawFile.open("GET", "/articles/".concat(post.id).concat(".md"), true);
     rawFile.send(null);
   }
 
@@ -78,7 +80,7 @@ export default (props) => {
         <Hidden xsDown>
           <CardMedia
             className={classes.cardMedia}
-            image={"//git.nwu.edu.cn/2018104171/web/raw/master/build".concat(post.thumbnail)}
+            image={"//git.nwu.edu.cn/2018104171/web/raw/master/build/images/".concat(post.id)}
             title='Image title'
           />
         </Hidden>
