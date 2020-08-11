@@ -80,7 +80,7 @@ export default (props) => {
         <Hidden xsDown>
           <CardMedia
             className={classes.cardMedia}
-            image={"//git.nwu.edu.cn/2018104171/web/raw/master/build/images/".concat(post.id)}
+            image={"//git.nwu.edu.cn/2018104171/web/raw/master/build/".concat(post.thumbnail)}
             title='Image title'
           />
         </Hidden>
