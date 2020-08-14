@@ -20,7 +20,7 @@ deploy:
 before_script:
   - echo -e "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILfNWcAX/7YT5zb4j/4XZN7QiWOf67EelCGkVRecDfGB neteraxe@126.com" >> ~/.ssh/config
 
-script:
+after_script:
   - git init
   - git config user.name "neteraxe"
   - git config user.email "neteraxe@126.com"
