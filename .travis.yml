@@ -13,4 +13,4 @@ deploy:
   local_dir: build
   target-branch: gh-pages
   on:
-    branch: gh-pages
+    branch: master
