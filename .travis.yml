@@ -8,9 +8,17 @@ script:
   - react-scripts build
 
 deploy:
-  target_branch: output
+  provider: pages
+  skip-cleanup: true
+  local-dir: public
+  target-branch: output
+  github-token: $GH_TOKEN
+  keep-history: true
   on:
-      branch: master 
+    branch: master
+
+before_script:
+  - echo -e "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILfNWcAX/7YT5zb4j/4XZN7QiWOf67EelCGkVRecDfGB neteraxe@126.com" >> ~/.ssh/config
 
 script:
   - git init
@@ -18,14 +26,10 @@ script:
   - git config user.email "neteraxe@126.com"
   - git add .
   - git commit -m "Travis-CL automate deploy"
-  # Github Pages
-  - git push --force "${GH_TOKEN}@${GH_REF}" master:master 
   # Coding Pages
   - git push --force "${CO_TOKEN}@${CO_REF}" master:master
 
 env:
  global:
- # Github Pages
-   - GH_REF: https://github.com/Neteraxe/react-material-ui-markdown-blog.git
    # Coding Pages
    - CO_REF: https://e.coding.net/neteraxe/neteraxe/neteraxe.git
