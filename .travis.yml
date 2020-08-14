@@ -19,13 +19,13 @@ script:
   - git add .
   - git commit -m "Travis-CL automate deploy"
   # Github Pages
-  - git push --force "https://${GH_TOKEN}@${GH_REF}" master:master 
+  - git push --force "${GH_TOKEN}@${GH_REF}" master:master 
   # Coding Pages
-  - git push --force "https://neteraxe:${CO_TOKEN}@${CO_REF}" master:master
+  - git push --force "${CO_TOKEN}@${CO_REF}" master:master
 
 env:
  global:
  # Github Pages
-   - GH_REF: https://github.com/Neteraxe/react-material-ui-markdown-blog
+   - GH_REF: git@github.com:Neteraxe/react-material-ui-markdown-blog.git
    # Coding Pages
    - CO_REF: git@e.coding.net:neteraxe/neteraxe/neteraxe.git
