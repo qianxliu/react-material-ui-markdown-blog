@@ -32,4 +32,4 @@ after_script:
 env:
  global:
    # Coding Pages
-   - CO_REF: https://e.coding.net/neteraxe/neteraxe/neteraxe.git
+   - CO_REF: git@e.coding.net:neteraxe/neteraxe/neteraxe.git
