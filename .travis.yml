@@ -19,7 +19,6 @@ deploy:
 
 before_script:
   - sudo chown -v $USER ~/.ssh/known_hosts
-  - sudo ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
   - echo -e "Host\s*\n\tUser\tyour_login_user\n\tStrictHostKeyChecking\sno\n\tIdentityFile\t~/my_path/id_rsa.pub\n" >> ~/.ssh/config
 
 after_script:
