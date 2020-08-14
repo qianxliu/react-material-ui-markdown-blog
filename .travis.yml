@@ -18,7 +18,9 @@ deploy:
     branch: master
 
 before_script:
-  - echo -e "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILfNWcAX/7YT5zb4j/4XZN7QiWOf67EelCGkVRecDfGB neteraxe@126.com" >> ~/.ssh/config
+  - sudo chown -v $USER ~/.ssh/known_hosts
+  - ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+  - echo -e "Host\s*\n\tUser\tyour_login_user\n\tStrictHostKeyChecking\sno\n\tIdentityFile\t~/my_path/id_rsa.pub\n" >> ~/.ssh/config
 
 after_script:
   - git init
