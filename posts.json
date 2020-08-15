@@ -1,0 +1,25 @@
+[{
+    "id": "0Story",
+    "date": "2020-08-08T10:20:36Z",
+    "author": "Qian Xin",
+    "thumbnail": "/images/0Story.jpg",
+    "preview": "Basic knowledge about the common site",
+    "tags": ["Main", "Website"]
+  },
+  {
+    "id": "1NLP",
+    "date": "2020-08-09T10:20:36Z",
+    "author": "Qian Xin",
+    "thumbnail": "/images/1NLP.jpg",
+    "preview": "Basic knowledge about the NLP, and some note not important",
+    "tags": ["Main", "NLP", "Machine Learning"]
+  },
+  {
+    "id": "2Life",
+    "date": "2020-08-11T19:35:54Z",
+    "thumbnail": "/images/2Life.jpg",
+    "author": "Qian Xin",
+    "preview": "Something not important, about the life of a Thinker",
+    "tags": ["Main", "Life"]
+  }
+]
