@@ -10,7 +10,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  local-dir: src
+  local-dir: build
   target-branch: output
   github-token: $GH_TOKEN
   keep-history: true
