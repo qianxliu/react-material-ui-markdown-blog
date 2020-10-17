@@ -21,5 +21,16 @@
     "author": "Qian Xin",
     "preview": "Something not important, about the life of a Thinker",
     "tags": ["Main", "Life"]
+  },
+  {
+    "id": "2Life",
+    "date": "2020-08-11T19:35:54Z",
+    "thumbnail": "/images/2Life.jpg",
+    "author": "Qian Xin",
+    "preview": "Something not important, about the life of a Thinker",
+    "tags": [
+      "Main",
+      "Life"
+    ]
   }
 ]
